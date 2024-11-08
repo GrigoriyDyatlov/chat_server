@@ -2,10 +2,11 @@ package ru.netology.Server;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Log {
     private static Log loger = null;
-    private final Set<String> msgLog = new HashSet<>();
+    private final Set<String> msgLog = new TreeSet<>();
 
     public Log() {
     }
