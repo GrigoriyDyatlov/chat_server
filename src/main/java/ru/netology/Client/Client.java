@@ -94,6 +94,7 @@ class Client {
                     userWord = inputUser.readLine();
                     if (userWord.equals("/exit")) {
                         out.write("/exit");
+                        out.flush();
                         Client.this.downService();
                         break;
                     } else {
