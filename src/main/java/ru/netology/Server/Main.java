@@ -12,8 +12,7 @@ public class Main {
     public static LinkedList<Server> serverList = new LinkedList<>(); // список всех нитей
 
     public static void main(String[] args) throws IOException {
-        int port = 8080;
-        ServerSocket server = new ServerSocket(port);
+        ServerSocket server = new ServerSocket(readPort("src/main/resources/port.txt"));
         try {
             while (true) {
                 Socket socket = server.accept();
@@ -28,7 +27,7 @@ public class Main {
         }
     }
 
-    public int readPort(String url) throws IOException {
+    public static int readPort(String url) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(url))) {
             return Integer.parseInt(br.readLine());
         } catch (IOException ex) {
