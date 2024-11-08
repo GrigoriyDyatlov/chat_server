@@ -93,7 +93,7 @@ class Client {
                     dtime = dt1.format(time);
                     userWord = inputUser.readLine();
                     if (userWord.equals("/exit")) {
-                        out.write("/exit" + "\n");
+                        out.write("/exit");
                         Client.this.downService();
                         break;
                     } else {

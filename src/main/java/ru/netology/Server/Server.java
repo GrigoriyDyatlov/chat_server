@@ -25,14 +25,17 @@ public class Server extends Thread {
         try {
             while (true) {
                 msg = in.readLine();
-                if (msg.equals("/exit")) {
-                    System.out.println("Connection closed");
-                    System.out.println(Log.getLoger());
-                    break;
-                }
-                Log.getLoger().log(msg);
-                for (Server s : Main.serverList) {
-                    s.send(msg);
+                if (msg != null) {
+                    if (msg.equals("/exit")) {
+                        System.out.println(Log.getLoger());
+                        System.out.println("Connection closed");
+                        break;
+                    }
+
+                    Log.getLoger().log(msg);
+                    for (Server s : Main.serverList) {
+                        s.send(msg);
+                    }
                 }
             }
         } catch (IOException e) {

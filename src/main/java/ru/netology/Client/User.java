@@ -4,9 +4,7 @@ public class User {
     private  String address;
     private  int port;
 
-    public User(String address, int port) {
-        this.address = address;
-        this.port = port;
+    public User() {
     }
 
     public void setAddress(String address){
