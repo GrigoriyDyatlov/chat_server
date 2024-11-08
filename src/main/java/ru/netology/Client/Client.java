@@ -99,7 +99,7 @@ class Client {
                     } else {
                         out.write("(" + dtime + ") " + nickname + ": " + userWord + "\n"); // отправляем на сервер
                     }
-                    out.flush(); // чистим
+                    out.flush();
                 } catch (IOException e) {
                     Client.this.downService();
 

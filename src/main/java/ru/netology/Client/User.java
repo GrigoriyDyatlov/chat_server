@@ -1,20 +1,28 @@
 package ru.netology.Client;
 
 public class User {
-    private String ADDRESS;
-    private int PORT;
+    private  String address;
+    private  int port;
 
     public User(String address, int port) {
-        this.ADDRESS = address;
-        this.PORT = port;
+        this.address = address;
+        this.port = port;
+    }
+
+    public void setAddress(String address){
+        this.address = address;
+    }
+
+    public void setPort(int port){
+        this.port = port;
     }
 
     public String getADDRESS() {
-        return ADDRESS;
+        return address;
     }
 
     public int getPORT() {
-        return PORT;
+        return port;
     }
 
 }
