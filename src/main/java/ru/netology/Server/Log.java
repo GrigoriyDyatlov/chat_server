@@ -1,6 +1,5 @@
 package ru.netology.Server;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -11,7 +10,7 @@ public class Log {
     public Log() {
     }
 
-    public static Log getLoger() {
+    public static Log getLogger() {
         if (loger == null) {
             synchronized (Log.class) {
                 if (loger == null) {

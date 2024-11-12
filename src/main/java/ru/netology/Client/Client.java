@@ -7,23 +7,23 @@ import java.util.Date;
 
 class Client {
 
+    private final String address;
+    private final int port;
     private Socket socket;
     private BufferedReader in;
     private BufferedWriter out;
     private BufferedReader inputUser;
-    private final String addr;
-    private final int port;
     private String nickname;
     private Date time;
     private String dtime;
     private SimpleDateFormat dt1;
 
 
-    public Client(String addr, int port) {
-        this.addr = addr;
+    public Client(String address, int port) {
+        this.address = address;
         this.port = port;
         try {
-            this.socket = new Socket(addr, port);
+            this.socket = new Socket(address, port);
         } catch (IOException e) {
             System.err.println("Socket failed");
         }
@@ -43,9 +43,9 @@ class Client {
         System.out.print("Press your nick: ");
         try {
             nickname = inputUser.readLine();
-            out.write("Hello " + nickname + "\n");
-            out.flush();
-        } catch (IOException ignored) {
+            System.out.println("Hello " + nickname + "\n");
+
+        } catch (IOException ex) {
         }
 
     }
@@ -57,7 +57,7 @@ class Client {
                 in.close();
                 out.close();
             }
-        } catch (IOException ignored) {
+        } catch (IOException ex) {
         }
     }
 
