@@ -26,8 +26,8 @@ public class Log {
         msgLog.add(msg);
     }
 
-    public void getLog() {
-        System.out.println(msgLog);
+    public String getLog() {
+        return msgLog.toString();
     }
 
     @Override
